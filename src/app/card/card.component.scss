@@ -1,0 +1,12 @@
+:host {
+  flex: 1;
+  /* magic numbers: image sizes provided by Scryfall */
+  max-width: 1040px;
+  max-height: 745px;
+  margin: 5px;
+}
+
+h4 {
+  white-space: nowrap;
+}
+
