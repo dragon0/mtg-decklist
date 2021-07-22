@@ -80,7 +80,7 @@ export class ScryfallService {
             scryfallCard.oracle_text!,
             scryfallCard.uri,
             scryfallCard.scryfall_uri,
-            scryfallCard.image_uris!.png,
+            scryfallCard.image_uris!.normal,
             scryfallCard.cmc,
             scryfallCard.mana_cost!,
             scryfallCard.power!,
@@ -93,7 +93,7 @@ export class ScryfallService {
             scryfallCard.oracle_text!,
             scryfallCard.uri,
             scryfallCard.scryfall_uri,
-            scryfallCard.image_uris!.png,
+            scryfallCard.image_uris!.normal,
         ); break;
         case 'instant': card = new InstantCard(
             scryfallCard.name,
@@ -101,7 +101,7 @@ export class ScryfallService {
             scryfallCard.oracle_text!,
             scryfallCard.uri,
             scryfallCard.scryfall_uri,
-            scryfallCard.image_uris!.png,
+            scryfallCard.image_uris!.normal,
             scryfallCard.cmc,
             scryfallCard.mana_cost!,
         ); break;
@@ -111,7 +111,7 @@ export class ScryfallService {
             scryfallCard.oracle_text!,
             scryfallCard.uri,
             scryfallCard.scryfall_uri,
-            scryfallCard.image_uris!.png,
+            scryfallCard.image_uris!.normal,
             scryfallCard.cmc,
             scryfallCard.mana_cost!,
         ); break;
@@ -121,7 +121,7 @@ export class ScryfallService {
             scryfallCard.oracle_text!,
             scryfallCard.uri,
             scryfallCard.scryfall_uri,
-            scryfallCard.image_uris!.png,
+            scryfallCard.image_uris!.normal,
             scryfallCard.cmc,
             scryfallCard.mana_cost!,
         ); break;
@@ -131,7 +131,7 @@ export class ScryfallService {
             scryfallCard.oracle_text!,
             scryfallCard.uri,
             scryfallCard.scryfall_uri,
-            scryfallCard.image_uris!.png,
+            scryfallCard.image_uris!.normal,
             scryfallCard.cmc,
             scryfallCard.mana_cost!,
             scryfallCard.loyalty!,
