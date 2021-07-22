@@ -106,6 +106,31 @@ export class SorceryCard extends SpellCard {
   }
 }
 
+export class EnchantmentCard extends SpellCard {
+  constructor(
+    public name: string,
+    public type_line: string,
+    public oracle_text: string,
+    public scryfall_api_uri: string,
+    public scryfall_user_uri: string,
+    public image_uri: string,
+    public cmc: number,
+    public mana_cost: string,
+  ){
+    super(
+      name,
+      'enchantment',
+      type_line,
+      oracle_text,
+      scryfall_api_uri,
+      scryfall_user_uri,
+      image_uri,
+      cmc,
+      mana_cost,
+    )
+  }
+}
+
 export class ArtifactCard extends SpellCard {
   constructor(
     public name: string,

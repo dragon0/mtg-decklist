@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Card, LandCard, InstantCard, SorceryCard, ArtifactCard, CreatureCard, PlaneswalkerCard, Deck } from './model/deck';
+import { Card, LandCard, InstantCard, SorceryCard, EnchantmentCard, ArtifactCard, CreatureCard, PlaneswalkerCard, Deck } from './model/deck';
 
 const API_ROOT = 'https://api.scryfall.com';
 
@@ -115,6 +115,16 @@ export class ScryfallService {
             scryfallCard.cmc,
             scryfallCard.mana_cost!,
         ); break;
+        case 'enchantment': card = new EnchantmentCard(
+            scryfallCard.name,
+            scryfallCard.type_line,
+            scryfallCard.oracle_text!,
+            scryfallCard.uri,
+            scryfallCard.scryfall_uri,
+            scryfallCard.image_uris!.normal,
+            scryfallCard.cmc,
+            scryfallCard.mana_cost!,
+        ); break;
         case 'artifact': card = new ArtifactCard(
             scryfallCard.name,
             scryfallCard.type_line,
@@ -141,7 +151,7 @@ export class ScryfallService {
     return card;
   }
 
-  private determineType(card: ScryfallCard): 'land' | 'instant' | 'sorcery' | 'artifact' | 'creature' | 'planeswalker' {
+  private determineType(card: ScryfallCard): 'land' | 'instant' | 'sorcery' | 'enchantment' | 'artifact' | 'creature' | 'planeswalker' {
 
     let types = card.type_line.split(/ +/);
 
@@ -153,6 +163,7 @@ export class ScryfallService {
         case 'land': return 'land';
         case 'instant': return 'instant';
         case 'sorcery': return 'sorcery';
+        case 'enchantment': return 'enchantment';
         case 'artifact': return 'artifact';
         case 'planeswalker': return 'planeswalker';
         default: continue;
