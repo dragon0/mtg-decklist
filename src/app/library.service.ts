@@ -171,7 +171,7 @@ export class LibraryService {
   loadExampleLibrary(): Observable<Deck[]> {
     return forkJoin(
       EXAMPLE_LIBRARY.map((protodeck) => {
-        this.scryfall.getCollection(protodeck.cards)
+        return this.scryfall.getCollection(protodeck.cards)
             .pipe(map((cards) => new Deck(protodeck.name, cards)));
       })).pipe(map((library) => {
         this.saveLibrary(library);
